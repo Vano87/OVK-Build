@@ -71,6 +71,33 @@ $(function() {
 		},800)
 	});
 
+// Animate number wuth Blur
+
+	$(".s-adv").waypoint(function() {
+		$({blurRadius: 5}).animate({blurRadius: 0}, {
+			duration: 1200,
+			easing: 'swing',
+			step: function() {
+				$(".s-adv-item h3 span").css({
+				"-webkit-filter": "blur("+this.blurRadius+"px)",
+				"filter": "blur("+this.blurRadius+"px)"
+	});
+	}
+});
+var comma_separator_number_step = $.animateNumber.numberStepFactories.separator(' ');
+$(".s-adv-item h3 span").each(function() {
+	var tcount = $(this).data("count");
+	$(this).animateNumber({ number: tcount,
+		easing: 'easeInQuad',
+		"font-size": "1.8125em",
+		numberStep: comma_separator_number_step},
+		1200);
+});
+	},{
+		offset : "70%"
+	});
+
+
 	$(".toggle-mnu").click(function() {
 		$(this).toggleClass("on");
 		$(".main-mnu").slideToggle();

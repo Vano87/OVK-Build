@@ -1,5 +1,6 @@
 $(function() {
 
+	$(".s-direct .item-vertical p").equalHeights();
 
 	$(".mfp-gallery").magnificPopup ({
 
@@ -18,17 +19,25 @@ $(function() {
 				$.magnificPopup.instance.next = function() {
 					var self = this;
 					self.wrap.removeClass('mfp-image-loaded');
-					setTimeout(function() { $.magnificPopup.proto.next.call(self); }, 120);
+					setTimeout(function() { 
+						$.magnificPopup.proto.next.call(self);
+						 }, 120);
 				}
 				$.magnificPopup.instance.prev = function() {
 					var self = this;
 					self.wrap.removeClass('mfp-image-loaded');
-					setTimeout(function() { $.magnificPopup.proto.prev.call(self); }, 120);
+					setTimeout(function() {
+
+					 $.magnificPopup.proto.prev.call(self);
+
+					  }, 120);
 				}
 			},
 			imageLoadComplete: function() { 
 				var self = this;
-				setTimeout(function() { self.wrap.addClass('mfp-image-loaded'); }, 16);
+				setTimeout(function() { 
+
+					self.wrap.addClass('mfp-image-loaded'); }, 16);
 			}
 		}
 	});

@@ -1,6 +1,6 @@
 $(function() {
 
-	$(".carousel-eq").owlCarousel({
+	$(".carousel-eq, .carousel-brands").owlCarousel({
 			loop:true,
     	responsive : {
         0 : {
